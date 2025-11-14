@@ -1,0 +1,117 @@
+<!-- Hero Wrapper -->
+<div class="w-full h-screen bg-cover bg-center bg-no-repeat overflow-hidden relative"
+  style="background-image: url('assets/images/classroom-bg.jpg');">
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <!-- Top Navigation Bar -->
+  <nav
+    class="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 bg-black bg-opacity-60 text-white">
+    <!-- Logo -->
+    <div class="text-2xl font-bold tracking-wide">📚 DigitalClassroom</div>
+
+    <!-- Nav Links -->
+    <ul class="flex gap-6 text-sm font-medium">
+      <li><a href="#home" class="hover:text-blue-400 transition">Home</a></li>
+      <li><a href="#about" class="hover:text-blue-400 transition">About</a></li>
+      <li><a href="#features" class="hover:text-blue-400 transition">Features</a></li>
+      <li><a href="#contact" class="hover:text-blue-400 transition">Contact</a></li>
+    </ul>
+
+    <!-- Auth Buttons -->
+    <div class="flex gap-4 items-center">
+      <!-- Direct Login Button -->
+      <button
+  routerLink="/login"
+  class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition"
+>
+  🔐 Login
+</button>
+
+
+
+
+      <!-- Register Button with Hover Menu -->
+      <div class="relative group">
+       <button
+  routerLink="/register"
+  class="bg-green-600 text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 transition"
+>
+  📝 Register
+</button>
+        <div class="absolute right-0 mt-2 w-56 bg-black bg-opacity-70 text-white rounded-lg shadow-lg border border-gray-700
+                 opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 transition">
+          <div class="p-3 text-sm font-semibold text-gray-300 tracking-wide">
+            Register as
+          </div>
+          <ul class="py-1 text-base">
+            <li>
+              <a routerLink="/student-register" class="block px-4 py-2 hover:bg-gray-800 rounded cursor-pointer">
+                👨‍🎓 Student Registration
+              </a>
+            </li>
+            <li>
+              <a routerLink="/teacher-register" class="block px-4 py-2 hover:bg-gray-800 rounded cursor-pointer">
+                👩‍🏫 Teacher Registration
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Content -->
+  <div id="home"
+    class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6 max-w-screen-xl mx-auto">
+    <h1 class="text-5xl md:text-6xl font-bold mb-6">
+      Digital Classroom Management System
+    </h1>
+    <p class="text-xl max-w-2xl mb-8">
+      Manage students, teachers, classes, and attendance — all in one scalable,
+      enterprise-ready system.
+    </p>
+  </div>
+
+  <!-- Bottom Branding -->
+  <div class="absolute bottom-6 left-0 right-0 text-center text-white text-4xl font-bold opacity-20">
+    CLASSROOM MANAGER SYSTEM
+  </div>
+</div>
+
+<!-- About Section -->
+<section id="about" class="bg-white py-16 px-6 text-center">
+  <h2 class="text-3xl font-bold mb-4">About Us</h2>
+  <p class="max-w-3xl mx-auto text-gray-700 text-lg">
+    Our Digital Classroom Management System is designed to simplify and
+    streamline school operations. From attendance tracking to role-based access,
+    we empower educators with tools that save time and improve outcomes.
+  </p>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="bg-gray-100 py-16 px-6 text-center">
+  <h2 class="text-3xl font-bold mb-8">Key Features</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto text-left">
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h3 class="text-xl font-semibold mb-2">📊 Attendance Tracking</h3>
+      <p class="text-gray-600">
+        Automated daily attendance with real-time reports.
+      </p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h3 class="text-xl font-semibold mb-2">🧑‍🏫 Role-based Login</h3>
+      <p class="text-gray-600">
+        Secure access for Admin, Teachers, and Students.
+      </p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h3 class="text-xl font-semibold mb-2">📅 Class Scheduling</h3>
+      <p class="text-gray-600">Create and manage timetables with ease.</p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h3 class="text-xl font-semibold mb-2">📈 Student Analytics</h3>
+      <p class="text-gray-600">Track performance and generate insights.</p>
+    </div>
+  </div>
+</section>
