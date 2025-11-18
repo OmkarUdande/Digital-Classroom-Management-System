@@ -7,96 +7,44 @@
 
   <!-- Centered Register Card -->
   <div class="relative z-10 flex items-center justify-center h-full px-4">
-    <div class="w-full max-w-lg bg-white bg-opacity-10 backdrop-blur-xl border border-white border-opacity-30 shadow-2xl rounded-2xl p-10">
-      
+    <div
+      class="w-full max-w-lg bg-white bg-opacity-10 backdrop-blur-xl border border-white border-opacity-30 shadow-2xl rounded-2xl p-10">
+
       <!-- Branding -->
-      <h2 class="text-5xl font-bold text-center bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 bg-clip-text text-transparent mb-4">
-         Register
+      <h2
+        class="text-5xl font-bold text-center bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent mb-4">
+        Register
       </h2>
       <p class="text-gray-200 mb-8 text-center text-lg">Create your DigitalClassroom account</p>
 
-      <!-- Role Selection -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        <button
-          (click)="role='student'"
-          [ngClass]="{
-            'bg-green-600 text-white shadow-lg ring-2 ring-green-300': role==='student',
-            'bg-white text-gray-700': role!=='student'
-          }"
-          class="px-5 py-3 rounded-lg border hover:scale-105 transition-transform duration-300 text-lg"
-        >
-          👨‍🎓 Student
-        </button>
-
-        <button
-          (click)="role='teacher'"
-          [ngClass]="{
-            'bg-green-600 text-white shadow-lg ring-2 ring-green-300': role==='teacher',
-            'bg-white text-gray-700': role!=='teacher'
-          }"
-          class="px-5 py-3 rounded-lg border hover:scale-105 transition-transform duration-300 text-lg"
-        >
-          👩‍🏫 Teacher
-        </button>
-
-        <button
-          (click)="role='principal'"
-          [ngClass]="{
-            'bg-green-600 text-white shadow-lg ring-2 ring-green-300': role==='principal',
-            'bg-white text-gray-700': role!=='principal'
-          }"
-          class="px-5 py-3 rounded-lg border hover:scale-105 transition-transform duration-300 text-lg"
-        >
-          🏫 Principal
-        </button>
-
-        <button
-          (click)="role='admin'"
-          [ngClass]="{
-            'bg-green-600 text-white shadow-lg ring-2 ring-green-300': role==='admin',
-            'bg-white text-gray-700': role!=='admin'
-          }"
-          class="px-5 py-3 rounded-lg border hover:scale-105 transition-transform duration-300 text-lg"
-        >
-          🛡️ Admin
-        </button>
-      </div>
-
       <!-- Registration Form -->
-      <form class="space-y-5" (ngSubmit)="onRegister()">
-        <input type="text" [(ngModel)]="fullName" name="fullName"
-               placeholder="Full Name" class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 text-lg" />
+      <form class="space-y-6" (ngSubmit)="onRegister()">
+        <input type="text" [(ngModel)]="fullName" name="fullName" placeholder="Full Name"
+               class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-green-300 text-lg bg-white bg-opacity-80" />
 
-        <input type="email" [(ngModel)]="email" name="email"
-               placeholder="Email" class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 text-lg" />
+        <input type="email" [(ngModel)]="email" name="email" placeholder="Email"
+               class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-green-300 text-lg bg-white bg-opacity-80" />
 
-        <input type="password" [(ngModel)]="password" name="password"
-               placeholder="Password" class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 text-lg" />
+        <input type="password" [(ngModel)]="password" name="password" placeholder="Password"
+               class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-green-300 text-lg bg-white bg-opacity-80" />
 
-        <!-- Role-specific field -->
-        <input *ngIf="role==='student'" [(ngModel)]="extraField" name="class"
-               placeholder="Class / Grade" class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 text-lg" />
-        <input *ngIf="role==='teacher'" [(ngModel)]="extraField" name="subject"
-               placeholder="Subject Expertise" class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 text-lg" />
-        <input *ngIf="role==='principal'" [(ngModel)]="extraField" name="schoolCode"
-               placeholder="School Code" class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 text-lg" />
-        <input *ngIf="role==='admin'" [(ngModel)]="extraField" name="adminKey"
-               placeholder="Admin Key" class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 text-lg" />
+        <input [(ngModel)]="extraField" name="identifier" placeholder="User ID / Class / Subject"
+               class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-green-300 text-lg bg-white bg-opacity-80" />
 
         <!-- Submit -->
         <button type="submit"
-                class="w-full bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 text-white py-3 rounded-lg shadow hover:opacity-90 transition text-lg">
-          Register as {{ role | titlecase }}
+                class="w-full bg-gradient-to-r from-green-300 via-emerald-300 to-teal-300 text-gray-900 py-3 rounded-lg shadow hover:opacity-90 transition text-lg">
+          Register
         </button>
       </form>
 
       <!-- Back to Login Button -->
       <div class="mt-6 text-center">
-  <button routerLink="/login"
-          class="px-5 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition">
-    ⬅️ Back to Login
-  </button>
-</div>
+        <button routerLink="/login"
+                class="px-5 py-2 bg-white bg-opacity-30 text-white rounded-lg hover:bg-opacity-50 transition">
+          ⬅️ Back to Login
+        </button>
+      </div>
 
     </div>
   </div>

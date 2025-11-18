@@ -1,88 +1,36 @@
 <!-- Fullscreen Background Wrapper -->
 <div class="w-full h-screen bg-cover bg-center bg-no-repeat relative"
-     style="background-image: url('assets/images/student-login-bg.jpg');">
-  
+  style="background-image: url('assets/images/student-login-bg.jpg');">
+
   <!-- Dark Overlay -->
   <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
   <!-- Centered Login Card -->
   <div class="relative z-10 flex items-center justify-center h-full px-4">
-    <!-- Increased max-width and padding -->
-    <div class="w-full max-w-lg bg-white bg-opacity-10 backdrop-blur-xl border border-white border-opacity-30 shadow-2xl rounded-2xl p-10">
-      
+    <div
+      class="w-full max-w-lg bg-white bg-opacity-10 backdrop-blur-xl border border-white border-opacity-30 shadow-2xl rounded-2xl p-10">
+
       <!-- Branding -->
-      <h2 class="text-5xl font-bold text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
-         Login
+      <h2
+        class="text-5xl font-bold text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+        Login
       </h2>
       <p class="text-gray-200 mb-8 text-center text-lg">Welcome to DCMS</p>
 
-      <!-- Role Selection -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        <button
-          (click)="role='student'"
-          [ngClass]="{
-            'bg-green-600 text-white shadow-lg ring-2 ring-green-300': role==='student',
-            'bg-white text-gray-700': role!=='student'
-          }"
-          class="px-5 py-3 rounded-lg border hover:scale-105 transition-transform duration-300 text-lg"
-        >
-          👨‍🎓 Student
-        </button>
-
-        <button
-          (click)="role='teacher'"
-          [ngClass]="{
-            'bg-red-600 text-white shadow-lg ring-2 ring-red-300': role==='teacher',
-            'bg-white text-gray-700': role!=='teacher'
-          }"
-          class="px-5 py-3 rounded-lg border hover:scale-105 transition-transform duration-300 text-lg"
-        >
-          👩‍🏫 Teacher
-        </button>
-
-        <button
-          (click)="role='principal'"
-          [ngClass]="{
-            'bg-indigo-600 text-white shadow-lg ring-2 ring-indigo-300': role==='principal',
-            'bg-white text-gray-700': role!=='principal'
-          }"
-          class="px-5 py-3 rounded-lg border hover:scale-105 transition-transform duration-300 text-lg"
-        >
-          🏫 Principal
-        </button>
-
-        <button
-          (click)="role='admin'"
-          [ngClass]="{
-            'bg-yellow-600 text-white shadow-lg ring-2 ring-yellow-300': role==='admin',
-            'bg-white text-gray-700': role!=='admin'
-          }"
-          class="px-5 py-3 rounded-lg border hover:scale-105 transition-transform duration-300 text-lg"
-        >
-          🛡️ Admin
-        </button>
-      </div>
-
       <!-- Form -->
       <form class="space-y-5" (ngSubmit)="onLogin()">
-        <input [(ngModel)]="email" name="email" type="email"
-               placeholder="Email" class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 text-lg" />
-        <input [(ngModel)]="password" name="password" type="password"
-               placeholder="Password" class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 text-lg" />
+        <input [(ngModel)]="email" name="email" type="email" placeholder="Email"
+          class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 text-lg" />
+        <input [(ngModel)]="password" name="password" type="password" placeholder="Password"
+          class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 text-lg" />
 
-        <!-- Role-specific field -->
-        <input *ngIf="role==='student'" [(ngModel)]="extraField" name="class"
-               placeholder="Class / Grade" class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 text-lg" />
-        <input *ngIf="role==='teacher'" [(ngModel)]="extraField" name="subject"
-               placeholder="Subject" class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-red-500 text-lg" />
-        <input *ngIf="role==='principal'" [(ngModel)]="extraField" name="schoolCode"
-               placeholder="School Code" class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 text-lg" />
-        <input *ngIf="role==='admin'" [(ngModel)]="extraField" name="adminKey"
-               placeholder="Admin Key" class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 text-lg" />
+        <!-- Optional: Default extra field -->
+        <input [(ngModel)]="extraField" name="identifier" placeholder="User ID / Class / Subject"
+          class="w-full px-5 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 text-lg" />
 
-        <button type="submit"
-                class="w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-3 rounded-lg shadow hover:opacity-90 transition text-lg">
-          Login as {{ role | titlecase }}
+        <button type="submit" class="w-full bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 
+               text-gray-900 py-3 rounded-lg shadow hover:opacity-90 transition text-lg">
+          Login
         </button>
       </form>
     </div>
